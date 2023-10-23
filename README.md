@@ -47,6 +47,18 @@ python3 exploit.py --url http://10.10.10.75/nibbleblog/ --username admin --passw
 
 En el exploit vemos a ruta y ademas que renombra el archivo al de shell.php a image.php.
 
+## Full tty
+
+```
+script /dev/null -c bash
+ctrl+z
+stty raw -echo;fg
+xterm
+export TERM=xterm
+export SHELL=/bin/bash
+```
+
+
 ## Privilege Escalation
 
 ![image](https://github.com/gecr07/Nibbles-HTB/assets/63270579/12047cef-97a8-4ca2-b78c-4fc7f5f7666d)
