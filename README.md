@@ -56,6 +56,16 @@ stty raw -echo;fg
 xterm
 export TERM=xterm
 export SHELL=/bin/bash
+
+script /dev/null -c bash
+Ctrl+z
+styy raw -echo;fg
+  reset
+  xterm
+export TERM=xterm
+export SHELL=bash
+
+
 ```
 
 
